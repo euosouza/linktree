@@ -19,7 +19,7 @@
           <div v-animate-on-scroll="'100ms'" class="flex flex-col items-center md:items-start text-center md:text-left space-y-3 md:space-y-6">
             <h3 class="font-bold text-tertiary uppercase tracking-wider text-xs md:text-sm">Links Úteis</h3>
             <nav class="flex flex-col items-center md:items-start gap-2 md:gap-3 text-sm">
-              <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#">Início</a>
+              <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#home">Início</a>
               <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#servicos">Serviços</a>
               <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#depoimentos">Depoimentos</a>
               <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#faq">Dúvidas</a>

@@ -41,6 +41,11 @@ const setActiveManually = (id) => {
   isManualScrolling.value = true
   activeSection.value = id
   
+  const el = document.getElementById(id)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+  
   if (scrollTimeout) clearTimeout(scrollTimeout)
   scrollTimeout = setTimeout(() => {
     isManualScrolling.value = false

@@ -23,5 +23,10 @@ export default defineNuxtConfig({
     serverBundle: {
       collections: ['ph']
     }
-  }
+  },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
 })
