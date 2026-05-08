@@ -29,6 +29,8 @@
 
 
 <script setup>
+const config = useRuntimeConfig()
+const baseURL = config.app.baseURL
 const activeSection = ref('home')
 const isManualScrolling = ref(false)
 let scrollTimeout = null
@@ -100,8 +102,13 @@ useHead({
     {
       rel: 'preload',
       as: 'image',
-      href: '/avatar.jpeg',
+      href: `${baseURL}avatar.jpeg`,
       fetchpriority: 'high'
+    },
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: `${baseURL}favicon.ico`
     }
   ],
   script: [
@@ -116,8 +123,8 @@ useHead({
           "Mo-Fr 08:00-20:00",
           "Sa 09:00-14:00"
         ],
-        "image": "https://kellyfortes.vet.br/avatar.jpeg",
-        "url": "https://kellyfortes.vet.br"
+        "image": `${baseURL}avatar.jpeg`,
+        "url": "https://euosouza.github.io/linktree/"
       })
     }
   ]
@@ -128,7 +135,7 @@ useSeoMeta({
   ogTitle: 'Dra. Kelly Fortes | Atendimento Veterinário Domiciliar',
   description: 'Atendimento veterinário humanizado no conforto do seu lar. Consultas, vacinas e cuidados preventivos para o seu pet sem o estresse da clínica.',
   ogDescription: 'Atendimento veterinário humanizado no conforto do seu lar. Consultas, vacinas e cuidados preventivos para o seu pet sem o estresse da clínica.',
-  ogImage: 'https://kellyfortes.vet.br/avatar.jpeg',
+  ogImage: `${baseURL}avatar.jpeg`,
   twitterCard: 'summary_large_image',
   ogType: 'website',
   ogLocale: 'pt_BR'

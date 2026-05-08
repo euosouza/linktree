@@ -1,3 +1,8 @@
+<script setup>
+const config = useRuntimeConfig()
+const baseURL = config.app.baseURL
+</script>
+
 <template>
   <section id="home" class="md:scroll-mt-20">
     <div class="py-16 md:py-20 px-6 relative md:overflow-hidden flex flex-col md:flex-row md:items-center"> 
@@ -8,7 +13,7 @@
           
           <!-- Mobile Profile Image -->
           <div v-animate-on-scroll class="md:hidden relative w-32 h-32 rounded-full overflow-hidden border-4 border-tertiary-container/20 shadow-sm">
-            <img alt="Foto de perfil da Dra. Kelly Fortes" class="w-full h-full object-cover" src="/avatar.jpeg" width="128" height="128" fetchpriority="high">
+            <img alt="Foto de perfil da Dra. Kelly Fortes" class="w-full h-full object-cover" :src="`${baseURL}avatar.jpeg`" width="128" height="128" fetchpriority="high">
           </div>
 
           <!-- Mobile CRMV Badge -->
@@ -58,7 +63,7 @@
           <div class="relative w-full aspect-square md:max-w-md mx-auto">
             <div class="absolute inset-0 bg-burgundy-800/10 rounded-[30% 70% 70% 30% / 30% 30% 70% 70%] animate-[pulse_8s_infinite]"></div>
             <div class="relative w-full h-full rounded-[30% 70% 70% 30% / 30% 30% 70% 70%] overflow-hidden border-8 border-white shadow-2xl z-10">
-              <img alt="Dra. Kelly Fortes realizando um atendimento veterinário carinhoso" class="w-full h-full object-cover" src="/avatar.jpeg" width="600" height="600" fetchpriority="high">
+              <img alt="Dra. Kelly Fortes realizando um atendimento veterinário carinhoso" class="w-full h-full object-cover" :src="`${baseURL}avatar.jpeg`" width="600" height="600" fetchpriority="high">
             </div>
             <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-tertiary-container/20 z-20 hover:scale-105 transition-transform">
               <div class="flex items-center gap-4">
