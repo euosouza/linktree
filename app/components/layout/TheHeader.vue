@@ -3,14 +3,14 @@
     <div class="main-container mx-auto py-8 flex justify-between items-center px-8 md:px-12">
       <span class="text-headline-md font-headline-md text-burgundy-800"></span>
       <div class="hidden md:flex gap-10 items-center">
-        <a v-for="item in navItems" 
+        <NuxtLink v-for="item in navItems" 
            :key="item.id"
-           :href="`#${item.id}`"
+           :to="`/#${item.id}`"
            @click="$emit('setActive', item.id)"
            :class="activeSection === item.id ? 'text-burgundy-800 font-bold' : 'text-tertiary'" 
            class="hover:text-burgundy-800 transition-all font-label-md">
           {{ item.label }}
-        </a>
+        </NuxtLink>
       </div>
     </div>
   </header>

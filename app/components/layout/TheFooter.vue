@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-white border-t border-tertiary-container/10 pt-12 pb-6 px-6 md:px-0">
+  <footer class="bg-white border-t border-tertiary-container/10 pt-12 pb-20 md:pb-12">
     <div class="md:main-container md:mx-auto md:px-8 lg:px-12 px-6">
       <!-- Top area -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-10">
@@ -19,10 +19,13 @@
           <div v-animate-on-scroll="'100ms'" class="flex flex-col items-center md:items-start text-center md:text-left space-y-3 md:space-y-6">
             <h3 class="font-bold text-tertiary uppercase tracking-wider text-xs md:text-sm">Links Úteis</h3>
             <nav class="flex flex-col items-center md:items-start gap-2 md:gap-3 text-sm">
-              <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#home">Início</a>
-              <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#servicos">Serviços</a>
-              <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#depoimentos">Depoimentos</a>
-              <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#faq">Dúvidas</a>
+              <NuxtLink v-for="item in navItems" 
+                :key="item.id"
+                class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" 
+                :to="`/#${item.id}`"
+                @click="$emit('setActive', item.id)">
+                {{ item.label }}
+              </NuxtLink>
             </nav>
           </div>
           <div v-animate-on-scroll="'200ms'" class="flex flex-col items-center md:items-start text-center md:text-left space-y-3 md:space-y-6">
@@ -38,10 +41,21 @@
       </div>
     </div>
     <!-- Bottom copyright -->
-    <div class="pt-6 border-t border-tertiary-container/10 text-center">
+    <div class="pt-6 border-t border-tertiary-container/10 text-center mb-4 md:mb-0">
       <p class="text-xs md:text-sm text-on-tertiary-fixed-variant px-6">
         © 2024 Dra. Kelly Fortes — CRMV 26979. Todos os direitos reservados.
       </p>
     </div>
   </footer>
 </template>
+
+<script setup>
+defineProps({
+  navItems: {
+    type: Array,
+    required: true
+  }
+})
+
+defineEmits(['setActive'])
+</script>

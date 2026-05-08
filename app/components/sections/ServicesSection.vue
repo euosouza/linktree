@@ -45,6 +45,36 @@
             <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-normal md:leading-relaxed">Coleta de sangue, urina e outros exames diagnósticos realizados com rapidez e precisão durante a visita.</p>
           </div>
         </div>
+        <!-- Card 4 -->
+        <div v-animate-on-scroll="'300ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
+          <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
+            <Icon name="ph:monitor" class="text-teal-800 text-2xl md:text-4xl" />
+          </div>
+          <div>
+            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">Ultrassonografia</h3>
+            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-normal md:leading-relaxed">Diagnóstico por imagem de alta precisão realizado no domicílio, garantindo menos estresse e maior agilidade.</p>
+          </div>
+        </div>
+        <!-- Card 5 -->
+        <div v-animate-on-scroll="'400ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
+          <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
+            <Icon name="ph:lightning" class="text-teal-800 text-2xl md:text-4xl" />
+          </div>
+          <div>
+            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">Laserterapia</h3>
+            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-normal md:leading-relaxed">Terapia moderna para alívio da dor, cicatrização acelerada e controle de processos inflamatórios.</p>
+          </div>
+        </div>
+        <!-- Card 6 -->
+        <div v-animate-on-scroll="'500ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
+          <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
+            <Icon name="ph:activity" class="text-teal-800 text-2xl md:text-4xl" />
+          </div>
+          <div>
+            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">Eletro & Ecocardiograma</h3>
+            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-normal md:leading-relaxed">Check-up cardiológico completo para monitorar a saúde do coração e garantir segurança em cirurgias.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>

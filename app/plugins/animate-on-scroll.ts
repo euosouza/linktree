@@ -1,5 +1,8 @@
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive('animate-on-scroll', {
+    getSSRProps(binding, vnode) {
+      return {}
+    },
     mounted(el, binding) {
       // Classes iniciais (estado oculto e preparação da transição)
       el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-1000', 'ease-out');

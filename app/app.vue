@@ -14,7 +14,10 @@
       <SectionsVisualCloserSection />
     </main>
 
-    <LayoutTheFooter />
+    <LayoutTheFooter 
+      :nav-items="navItems" 
+      @set-active="setActiveManually"
+    />
 
     <LayoutBottomNav 
       :nav-items="navItems" 
