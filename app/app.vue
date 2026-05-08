@@ -5,10 +5,14 @@
       <div class="main-container mx-auto py-8 flex justify-between items-center px-8 md:px-12">
         <span class="text-headline-md font-headline-md text-burgundy-800"></span>
         <div class="hidden md:flex gap-10 items-center">
-          <a :class="activeSection === 'home' ? 'text-burgundy-800 font-bold' : 'text-tertiary'" class="hover:text-burgundy-800 transition-all font-label-md" href="#home">Home</a>
-          <a :class="activeSection === 'servicos' ? 'text-burgundy-800 font-bold' : 'text-tertiary'" class="hover:text-burgundy-800 transition-all font-label-md" href="#servicos">Serviços</a>
-          <a :class="activeSection === 'depoimentos' ? 'text-burgundy-800 font-bold' : 'text-tertiary'" class="hover:text-burgundy-800 transition-all font-label-md" href="#depoimentos">Depoimentos</a>
-          <a :class="activeSection === 'faq' ? 'text-burgundy-800 font-bold' : 'text-tertiary'" class="hover:text-burgundy-800 transition-all font-label-md" href="#faq">FAQ</a>
+          <a v-for="item in navItems" 
+             :key="item.id"
+             :href="`#${item.id}`"
+             @click="setActiveManually(item.id)"
+             :class="activeSection === item.id ? 'text-burgundy-800 font-bold' : 'text-tertiary'" 
+             class="hover:text-burgundy-800 transition-all font-label-md">
+            {{ item.label }}
+          </a>
         </div>
       </div>
     </header>
@@ -96,7 +100,7 @@
 
       <!-- Services Section with Dynamic Grid -->
       <section class="bg-on-tertiary-container/5 md:scroll-mt-20" id="servicos">
-        <div class="py-16 md:py-20 px-6   md:main-container md:mx-auto md:px-8 lg:px-12 space-y-4 md:space-y-0">
+        <div class="py-16 md:py-20 pt-0 px-6 md:main-container md:mx-auto md:px-8 lg:px-12 space-y-4 md:space-y-0">
           <div v-animate-on-scroll class="md:max-w-4xl mx-auto mb-12 flex flex-col items-center">
             <div class="inline-flex items-center gap-2 text-teal-700 font-label-md bg-teal-500/10 px-4 py-1.5 rounded-full border border-teal-500/30 mb-8">
               <Icon name="ph:first-aid" size="18" />
@@ -335,22 +339,16 @@
     </footer>
 
     <!-- Bottom Navigation Bar (Mobile Only) -->
-    <nav class="md:hidden fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto bg-white border-t border-tertiary-container/20 flex justify-around items-center px-1 py-3 z-50">
-      <a :class="activeSection === 'home' ? 'text-burgundy-700' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:text-burgundy-800 rounded-xl transition-all" href="#home" aria-label="Ir para o início">
-        <Icon name="ph:house-fill" size="20" />
-        <span class="text-[10px] font-semibold leading-tight mt-0.5">Início</span>
-      </a>
-      <a :class="activeSection === 'servicos' ? 'text-burgundy-700' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:text-burgundy-800 rounded-xl transition-all" href="#servicos" aria-label="Ver serviços">
-        <Icon name="ph:first-aid-fill" size="20" />
-        <span class="text-[10px] font-semibold leading-tight mt-0.5">Serviços</span>
-      </a>
-      <a :class="activeSection === 'depoimentos' ? 'text-burgundy-700' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:text-burgundy-800 rounded-xl transition-all" href="#depoimentos" aria-label="Ver depoimentos">
-        <Icon name="ph:star-fill" size="20" />
-        <span class="text-[10px] font-semibold leading-tight mt-0.5">Depoimentos</span>
-      </a>
-      <a :class="activeSection === 'faq' ? 'text-burgundy-700' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:text-burgundy-800 rounded-xl transition-all" href="#faq" aria-label="Dúvidas frequentes">
-        <Icon name="ph:question-fill" size="20" />
-        <span class="text-[10px] font-semibold leading-tight mt-0.5">Dúvidas</span>
+    <nav class="md:hidden fixed bottom-0 left-0 right-0 mx-auto bg-white border-t border-tertiary-container/20 flex justify-around items-center px-1 py-3 z-50">
+      <a v-for="item in navItems"
+         :key="item.id"
+         :href="`#${item.id}`"
+         @click="setActiveManually(item.id)"
+         :aria-label="item.ariaLabel"
+         :class="activeSection === item.id ? 'text-burgundy-700' : 'text-on-tertiary-fixed-variant'" 
+         class="flex flex-col items-center justify-center px-3 py-1 hover:text-burgundy-800 rounded-xl transition-all">
+        <Icon :name="item.icon" size="20" />
+        <span class="text-[10px] font-semibold leading-tight mt-0.5">{{ item.label }}</span>
       </a>
     </nav>   
   </div>
@@ -358,25 +356,44 @@
 
 <script setup>
 const activeSection = ref('home')
+const isManualScrolling = ref(false)
+let scrollTimeout = null
+
+const navItems = [
+  { id: 'home', label: 'Início', icon: 'ph:house-fill', ariaLabel: 'Ir para o início' },
+  { id: 'servicos', label: 'Serviços', icon: 'ph:first-aid-fill', ariaLabel: 'Ver serviços' },
+  { id: 'depoimentos', label: 'Depoimentos', icon: 'ph:star-fill', ariaLabel: 'Ver depoimentos' },
+  { id: 'faq', label: 'Dúvidas', icon: 'ph:question-fill', ariaLabel: 'Dúvidas frequentes' }
+]
+
+const setActiveManually = (id) => {
+  isManualScrolling.value = true
+  activeSection.value = id
+  
+  if (scrollTimeout) clearTimeout(scrollTimeout)
+  scrollTimeout = setTimeout(() => {
+    isManualScrolling.value = false
+  }, 800) // Wait for smooth scroll to finish
+}
 
 onMounted(() => {
-  const options = {
-    root: null,
-    rootMargin: '-50% 0px -50% 0px', // Detect when section is in the middle of the screen
-    threshold: 0
+  const observerOptions = {
+    rootMargin: '-20% 0px -20% 0px',
+    threshold: 0.1
   }
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        activeSection.value = entry.target.id
-      }
-    })
-  }, options)
+    if (isManualScrolling.value) return
 
-  // Observe all sections and elements with IDs that match our nav
-  document.querySelectorAll('section[id], div[id="faq"]').forEach((section) => {
-    observer.observe(section)
+    const visibleEntries = entries.filter(entry => entry.isIntersecting)
+    if (visibleEntries.length > 0) {
+      activeSection.value = visibleEntries[0].target.id
+    }
+  }, observerOptions)
+
+  navItems.forEach(item => {
+    const el = document.getElementById(item.id)
+    if (el) observer.observe(el)
   })
 })
 
