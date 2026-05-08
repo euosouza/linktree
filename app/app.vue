@@ -69,24 +69,20 @@ onMounted(() => {
 })
 
 useHead({
-  title: 'Dra. Kelly Fortes | Atendimento Veterinário em Casa',
+  title: 'Dra. Kelly Fortes | Atendimento Veterinário Domiciliar',
   htmlAttrs: {
     class: 'scroll-smooth',
     lang: 'pt-BR'
   },
   meta: [
-    { name: 'description', content: 'Cuidado veterinário domiciliar com amor e profissionalismo.' }
+    { name: 'keywords', content: 'veterinário domiciliar, consulta pet em casa, atendimento veterinário em casa, Dra. Kelly Fortes, veterinária home care, saúde animal, vacinação em casa, CRMV 26979, veterinário SP, atendimento veterinário humanizado' },
+    { name: 'author', content: 'Dra. Kelly Fortes' },
+    { name: 'robots', content: 'index, follow' }
   ],
   link: [
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com'
-    },
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.gstatic.com',
-      crossorigin: 'anonymous'
-    },
+    { rel: 'canonical', href: 'https://kellyfortes.vet.br' },
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
     {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap',
@@ -99,6 +95,34 @@ useHead({
       href: '/avatar.jpeg',
       fetchpriority: 'high'
     }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "VeterinaryCare",
+        "name": "Dra. Kelly Fortes | Atendimento Veterinário Domiciliar",
+        "description": "Atendimento veterinário humanizado e profissional no conforto do seu lar. Consultas, vacinas e exames laboratoriais.",
+        "openingHours": [
+          "Mo-Fr 08:00-20:00",
+          "Sa 09:00-14:00"
+        ],
+        "image": "https://kellyfortes.vet.br/avatar.jpeg",
+        "url": "https://kellyfortes.vet.br"
+      })
+    }
   ]
+})
+
+useSeoMeta({
+  title: 'Dra. Kelly Fortes | Atendimento Veterinário Domiciliar',
+  ogTitle: 'Dra. Kelly Fortes | Atendimento Veterinário Domiciliar',
+  description: 'Atendimento veterinário humanizado no conforto do seu lar. Consultas, vacinas e cuidados preventivos para o seu pet sem o estresse da clínica.',
+  ogDescription: 'Atendimento veterinário humanizado no conforto do seu lar. Consultas, vacinas e cuidados preventivos para o seu pet sem o estresse da clínica.',
+  ogImage: 'https://kellyfortes.vet.br/avatar.jpeg',
+  twitterCard: 'summary_large_image',
+  ogType: 'website',
+  ogLocale: 'pt_BR'
 })
 </script>

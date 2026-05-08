@@ -17,7 +17,7 @@
               <Icon name="ph:first-aid" size="20" class="text-teal-800" />
             </div>
             <div class="text-left">
-              <p class="font-bold text-sm text-tertiary">CRMV 12345</p>
+              <p class="font-bold text-sm text-tertiary">CRMV 26979</p>
               <p class="text-[11px] text-on-tertiary-fixed-variant font-medium">Registro Profissional Ativo</p>
             </div>
           </div>
@@ -38,7 +38,7 @@
           <div v-animate-on-scroll="'400ms'" class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto mt-2">
             <!-- CTA Button — WhatsApp -->
             <a class="group flex items-center justify-center gap-3 bg-burgundy-700 text-white py-4 px-8 rounded-lg font-button text-button shadow-md hover:bg-burgundy-800 hover:shadow-xl hover:shadow-burgundy-800/20 hover:-translate-y-1 active:scale-95 active:shadow-md transition-all duration-300"
-               href="https://wa.me/5500000000000?text=Olá%2C%20Dra.%20Kelly!%20Gostaria%20de%20agendar%20um%20atendimento%20domiciliar%20para%20o%20meu%20pet%20"
+               href="https://wa.me/5531999581716?text=Olá%2C%20Dra.%20Kelly!%20Gostaria%20de%20agendar%20um%20atendimento%20domiciliar%20para%20o%20meu%20pet%20"
                target="_blank" rel="noopener noreferrer">
               <Icon name="ph:whatsapp-logo-fill" size="24" class="transition-transform duration-300 group-hover:rotate-12" />
               Agendar Atendimento
@@ -66,7 +66,7 @@
                   <Icon name="ph:first-aid" class="text-teal-800 text-2xl md:text-4xl" />
                 </div>
                 <div>
-                  <p class="font-bold text-base">CRMV 12345</p>
+                  <p class="font-bold text-base">CRMV 26979</p>
                   <p class="text-xs text-on-tertiary-fixed-variant font-medium">Registro Profissional Ativo</p>
                 </div>
               </div>

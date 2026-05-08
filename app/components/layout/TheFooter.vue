@@ -8,7 +8,7 @@
           <span class="text-2xl md:text-3xl font-bold font-headline-md text-burgundy-800">Dra. Kelly Fortes</span>
           <p class="text-on-tertiary-fixed-variant text-sm md:text-base max-w-md">Oferecendo excelência médica veterinária onde seu pet se sente mais seguro: em casa. Atendimento personalizado e humanizado.</p>
           <div class="flex gap-4">
-            <a class="text-burgundy-800 hover:scale-110 transition-transform bg-white p-3 rounded-full shadow-sm" href="https://instagram.com/kellyfortes.vet" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Instagram">
+            <a class="text-burgundy-800 hover:scale-110 transition-transform " href="https://instagram.com/kellyfortes.vet" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Instagram">
               <Icon name="ph:instagram-logo" size="24" />
             </a>
           </div>
@@ -27,11 +27,12 @@
           </div>
           <div v-animate-on-scroll="'200ms'" class="flex flex-col items-center md:items-start text-center md:text-left space-y-3 md:space-y-6">
             <h3 class="font-bold text-tertiary uppercase tracking-wider text-xs md:text-sm">Contatos</h3>
-            <p class="text-on-tertiary-fixed-variant text-sm leading-relaxed">
-              Seg–Sex: 08h–20h<br>
-              Sábados: 09h–14h<br>
-              contato@vethome.care
-            </p>
+            <div class="flex items-center gap-2">
+              <Icon name="ph:envelope-simple" size="18" class="text-burgundy-800" />
+              <a href="mailto:kellysfortes@gmail.com" class="text-on-tertiary-fixed-variant text-sm leading-relaxed hover:text-burgundy-800 transition-colors">
+                kellysfortes@gmail.com
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -39,7 +40,7 @@
     <!-- Bottom copyright -->
     <div class="pt-6 border-t border-tertiary-container/10 text-center">
       <p class="text-xs md:text-sm text-on-tertiary-fixed-variant px-6">
-        © 2024 Dra. Kelly Fortes — CRMV 12345. Todos os direitos reservados.
+        © 2024 Dra. Kelly Fortes — CRMV 26979. Todos os direitos reservados.
       </p>
     </div>
   </footer>
