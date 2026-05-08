@@ -77,7 +77,7 @@ module.exports = {
         "tertiary-fixed":             "#e0e3e3",
         "tertiary-fixed-dim":         "#c4c7c7",
         "on-tertiary-fixed":          "#181c1d",
-        "on-tertiary-fixed-variant":  "#434748",
+        "on-tertiary-fixed-variant":  "#35393a",
 
         // Error
         "error":                      "#ba1a1a",

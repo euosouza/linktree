@@ -11,6 +11,7 @@
       <SectionsServicesSection />
       <SectionsHumanizedCareSection />
       <SectionsTestimonialsSection />
+      <!-- <SectionsSpotifySection /> -->
       <SectionsVisualCloserSection />
     </main>
 
@@ -39,6 +40,7 @@ const navItems = [
   { id: 'home', label: 'Início', icon: 'ph:house-fill', ariaLabel: 'Ir para o início' },
   { id: 'servicos', label: 'Serviços', icon: 'ph:first-aid-fill', ariaLabel: 'Ver serviços' },
   { id: 'depoimentos', label: 'Depoimentos', icon: 'ph:star-fill', ariaLabel: 'Ver depoimentos' },
+  // { id: 'playlist', label: 'Playlist', icon: 'ph:music-notes-fill', ariaLabel: 'Ouvir playlist' },
   { id: 'faq', label: 'Dúvidas', icon: 'ph:question-fill', ariaLabel: 'Dúvidas frequentes' }
 ]
 
