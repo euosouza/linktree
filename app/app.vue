@@ -13,10 +13,10 @@
       </div>
     </header>
 
-    <main class="md:max-w-none mx-auto px-6 md:px-0 pb-0 bg-white ">      
+    <main class="md:max-w-none mx-auto bg-white ">      
       <!-- Integrated Split Hero Section -->
       <section id="home" class="md:scroll-mt-20">
-        <div class="py-16 md:py-20relative md:overflow-hidden flex flex-col md:flex-row md:items-center"> 
+        <div class="py-16 md:py-20 px-6 relative md:overflow-hidden flex flex-col md:flex-row md:items-center"> 
           <div class="absolute inset-0 mesh-bg opacity-50 pointer-events-none hidden md:block"></div>
           <div class="md:main-container md:mx-auto grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-12 items-center md:py-12 md:px-8 lg:px-12 w-full">
             
@@ -96,7 +96,7 @@
 
       <!-- Services Section with Dynamic Grid -->
       <section class="bg-on-tertiary-container/5 md:scroll-mt-20" id="servicos">
-        <div class="py-16 md:py-20  md:main-container md:mx-auto md:px-8 lg:px-12 space-y-4 md:space-y-0">
+        <div class="py-16 md:py-20 px-6   md:main-container md:mx-auto md:px-8 lg:px-12 space-y-4 md:space-y-0">
           <div v-animate-on-scroll class="md:max-w-4xl mx-auto mb-12 flex flex-col items-center">
             <div class="inline-flex items-center gap-2 text-teal-700 font-label-md bg-teal-500/10 px-4 py-1.5 rounded-full border border-teal-500/30 mb-8">
               <Icon name="ph:first-aid" size="18" />
@@ -183,7 +183,7 @@
 
       <!-- Bento Style Testimonials & FAQ Section -->
       <section class="md:scroll-mt-20" id="depoimentos">
-        <div class="py-16 md:py-20 md:main-container md:mx-auto md:px-8 lg:px-12 space-y-4 md:space-y-0">
+        <div class="py-16 md:py-20 px-6  md:main-container md:mx-auto md:px-8 lg:px-12 space-y-4 md:space-y-0">
           <div v-animate-on-scroll class="md:max-w-4xl mx-auto mb-12 flex flex-col items-center">
             <div class="inline-flex items-center gap-2 text-teal-700 font-label-md bg-teal-500/10 px-4 py-1.5 rounded-full border border-teal-500/30 mb-8">
               <Icon name="ph:star" size="18" />
@@ -271,7 +271,7 @@
       </section>
 
       <!-- Visual Closer (Image with Prompting) -->
-      <section class="py-16 md:py-20 pt-0">
+      <section class="py-16 md:py-20 pt-0 px-6 ">
         <div  v-animate-on-scroll  class="md:main-container md:mx-auto md:px-8 lg:px-12">
           <div class="relative rounded-xl md:rounded-[3rem] overflow-hidden h-72 sm:h-80 md:h-auto md:aspect-[21/9] md:max-w-[90%] mx-auto group shadow-lg md:shadow-2xl">
             <img alt="Exame veterinário carinhoso" class="w-full h-full object-cover md:transition-transform md:duration-1000 md:group-hover:scale-110" src="/banner_2.jpeg">
@@ -288,7 +288,7 @@
 
     <!-- Footer — único e responsivo -->
     <footer class="bg-white border-t border-tertiary-container/10 pt-12 pb-6 px-6 md:px-0">
-      <div class="md:main-container md:mx-auto md:px-8 lg:px-12">
+      <div class="md:main-container md:mx-auto md:px-8 lg:px-12 px-6 ">
         <!-- Top area -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-10">
 
@@ -328,7 +328,7 @@
       </div>
       <!-- Bottom copyright -->
       <div class="pt-6 border-t border-tertiary-container/10 text-center">
-        <p class="text-xs md:text-sm text-on-tertiary-fixed-variant">
+        <p class="text-xs md:text-sm text-on-tertiary-fixed-variant px-6 ">
           © 2024 Dra. Kelly Fortes — CRMV 12345. Todos os direitos reservados.
         </p>
       </div>
