@@ -24,7 +24,7 @@
               
               <!-- Mobile Profile Image -->
               <div v-animate-on-scroll class="md:hidden relative w-32 h-32 rounded-full overflow-hidden border-4 border-tertiary-container/20 shadow-sm">
-                  <img alt="Dr. Vet em Casa" class="w-full h-full object-cover" src="/avatar.jpeg">
+                  <img alt="Foto de perfil da Dra. Kelly Fortes" class="w-full h-full object-cover" src="/avatar.jpeg" width="128" height="128" fetchpriority="high">
                 </div>
   
                 <!-- Mobile CRMV Badge -->
@@ -74,7 +74,7 @@
               <div class="relative w-full aspect-square md:max-w-md mx-auto">
                 <div class="absolute inset-0 bg-burgundy-800/10 rounded-[30% 70% 70% 30% / 30% 30% 70% 70%] animate-[pulse_8s_infinite]"></div>
                 <div class="relative w-full h-full rounded-[30% 70% 70% 30% / 30% 30% 70% 70%] overflow-hidden border-8 border-white shadow-2xl z-10">
-                  <img alt="Dr. Vet em Casa" class="w-full h-full object-cover" src="/avatar.jpeg">
+                  <img alt="Dra. Kelly Fortes realizando um atendimento veterinário carinhoso" class="w-full h-full object-cover" src="/avatar.jpeg" width="600" height="600" fetchpriority="high">
                 </div>
                 <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-tertiary-container/20 z-20 hover:scale-105 transition-transform">
                   <div class="flex items-center gap-4">
@@ -150,7 +150,7 @@
         <div class="md:main-container mx-auto px-6 md:px-0 py-16 md:py-20 md:px-8 lg:px-12 mt-0">
           <div v-animate-on-scroll class="md:max-w-[90%] mx-auto rounded-xl md:rounded-[3rem] overflow-hidden shadow-lg md:shadow-2xl flex flex-col lg:flex-row bg-white group">
             <div  class="lg:w-1/2 relative md:min-h-[400px] overflow-hidden">
-              <img alt="Home Visit" class="w-full h-48 md:absolute md:inset-0 md:h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/banner_1.jpeg">
+              <img alt="Dra. Kelly Fortes atendendo um cachorro no sofá de casa, ambiente tranquilo e sem estresse" class="w-full h-48 md:absolute md:inset-0 md:h-full object-cover transition-transform duration-1000 group-hover:scale-110" src="/banner_1.jpeg" loading="lazy" decoding="async">
               <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-black/20 to-transparent"></div>
             </div>
             <div class="lg:w-1/2 p-5 md:p-12 lg:p-14 flex flex-col justify-center space-y-6 md:space-y-8 ">
@@ -274,7 +274,7 @@
       <section class="py-16 md:py-20 pt-0 px-6 ">
         <div  v-animate-on-scroll  class="md:main-container md:mx-auto md:px-8 lg:px-12">
           <div class="relative rounded-xl md:rounded-[3rem] overflow-hidden h-72 sm:h-80 md:h-auto md:aspect-[21/9] md:max-w-[90%] mx-auto group shadow-lg md:shadow-2xl">
-            <img alt="Exame veterinário carinhoso" class="w-full h-full object-cover md:transition-transform md:duration-1000 md:group-hover:scale-110" src="/banner_2.jpeg">
+            <img alt="Close de um estetoscópio e carinho em um gato, simbolizando cuidado humanizado" class="w-full h-full object-cover md:transition-transform md:duration-1000 md:group-hover:scale-110" src="/banner_2.jpeg" loading="lazy" decoding="async">
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 md:via-black/20 to-transparent flex flex-col justify-end p-5 md:p-12 lg:p-24">
               <div class="md:max-w-2xl">
                 <h2 v-animate-on-scroll class="text-white text-xl md:text-4xl lg:text-5xl font-headline-lg mb-2 md:mb-6">Compromisso Real com a Saúde Animal</h2>
@@ -297,7 +297,7 @@
             <span class="text-2xl md:text-3xl font-bold font-headline-md text-burgundy-800">Dra. Kelly Fortes</span>
             <p class="text-on-tertiary-fixed-variant text-sm md:text-base max-w-md">Oferecendo excelência médica veterinária onde seu pet se sente mais seguro: em casa. Atendimento personalizado e humanizado.</p>
             <div class="flex gap-4">
-              <a class="text-burgundy-800 hover:scale-110 transition-transform bg-white p-3 rounded-full shadow-sm" href="https://instagram.com/kellyfortes.vet" target="_blank" rel="noopener noreferrer">
+              <a class="text-burgundy-800 hover:scale-110 transition-transform bg-white p-3 rounded-full shadow-sm" href="https://instagram.com/kellyfortes.vet" target="_blank" rel="noopener noreferrer" aria-label="Siga-nos no Instagram">
                 <Icon name="ph:instagram-logo" size="24" />
               </a>
             </div>
@@ -306,7 +306,7 @@
           <!-- Links + Contatos: empilhados no mobile, 1 col each no desktop -->
           <div class="grid grid-cols-1 md:contents gap-6">
             <div v-animate-on-scroll="'100ms'" class="flex flex-col items-center md:items-start text-center md:text-left space-y-3 md:space-y-6">
-              <h4 class="font-bold text-tertiary uppercase tracking-wider text-xs md:text-sm">Links Úteis</h4>
+              <h3 class="font-bold text-tertiary uppercase tracking-wider text-xs md:text-sm">Links Úteis</h3>
               <nav class="flex flex-col items-center md:items-start gap-2 md:gap-3 text-sm">
                 <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#">Início</a>
                 <a class="text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" href="#servicos">Serviços</a>
@@ -315,7 +315,7 @@
               </nav>
             </div>
             <div v-animate-on-scroll="'200ms'" class="flex flex-col items-center md:items-start text-center md:text-left space-y-3 md:space-y-6">
-              <h4 class="font-bold text-tertiary uppercase tracking-wider text-xs md:text-sm">Contatos</h4>
+              <h3 class="font-bold text-tertiary uppercase tracking-wider text-xs md:text-sm">Contatos</h3>
               <p class="text-on-tertiary-fixed-variant text-sm leading-relaxed">
                 Seg–Sex: 08h–20h<br>
                 Sábados: 09h–14h<br>
@@ -336,19 +336,19 @@
 
     <!-- Bottom Navigation Bar (Mobile Only) -->
     <nav class="md:hidden fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto bg-white border-t border-tertiary-container/20 flex justify-around items-center px-1 py-3 z-50">
-      <a :class="activeSection === 'home' ? 'bg-burgundy-700 text-white rounded-full' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 transition-all" href="#home">
+      <a :class="activeSection === 'home' ? 'text-burgundy-700' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:text-burgundy-800 rounded-xl transition-all" href="#home" aria-label="Ir para o início">
         <Icon name="ph:house-fill" size="20" />
         <span class="text-[10px] font-semibold leading-tight mt-0.5">Início</span>
       </a>
-      <a :class="activeSection === 'servicos' ? 'bg-burgundy-700 text-white rounded-full' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:bg-burgundy-100 rounded-xl transition-all" href="#servicos">
+      <a :class="activeSection === 'servicos' ? 'text-burgundy-700' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:text-burgundy-800 rounded-xl transition-all" href="#servicos" aria-label="Ver serviços">
         <Icon name="ph:first-aid-fill" size="20" />
         <span class="text-[10px] font-semibold leading-tight mt-0.5">Serviços</span>
       </a>
-      <a :class="activeSection === 'depoimentos' ? 'bg-burgundy-700 text-white rounded-full' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:bg-burgundy-100 rounded-xl transition-all" href="#depoimentos">
+      <a :class="activeSection === 'depoimentos' ? 'text-burgundy-700' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:text-burgundy-800 rounded-xl transition-all" href="#depoimentos" aria-label="Ver depoimentos">
         <Icon name="ph:star-fill" size="20" />
         <span class="text-[10px] font-semibold leading-tight mt-0.5">Depoimentos</span>
       </a>
-      <a :class="activeSection === 'faq' ? 'bg-burgundy-700 text-white rounded-full' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:bg-burgundy-100 rounded-xl transition-all" href="#faq">
+      <a :class="activeSection === 'faq' ? 'text-burgundy-700' : 'text-on-tertiary-fixed-variant'" class="flex flex-col items-center justify-center px-3 py-1 hover:text-burgundy-800 rounded-xl transition-all" href="#faq" aria-label="Dúvidas frequentes">
         <Icon name="ph:question-fill" size="20" />
         <span class="text-[10px] font-semibold leading-tight mt-0.5">Dúvidas</span>
       </a>
@@ -381,17 +381,35 @@ onMounted(() => {
 })
 
 useHead({
-  title: ' | Atendimento Veterinário em Casa',
+  title: 'Dra. Kelly Fortes | Atendimento Veterinário em Casa',
   htmlAttrs: {
-    class: 'scroll-smooth'
+    class: 'scroll-smooth',
+    lang: 'pt-BR'
   },
   meta: [
     { name: 'description', content: 'Cuidado veterinário domiciliar com amor e profissionalismo.' }
   ],
   link: [
     {
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com'
+    },
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.gstatic.com',
+      crossorigin: 'anonymous'
+    },
+    {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap'
+      href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap',
+      media: 'print',
+      onload: "this.media='all'"
+    },
+    {
+      rel: 'preload',
+      as: 'image',
+      href: '/avatar.jpeg',
+      fetchpriority: 'high'
     }
   ]
 })
