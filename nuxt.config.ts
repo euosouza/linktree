@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: '/linktree/'
+    baseURL: '/linktree/',
+    buildAssetsDir: 'assets'
   },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
@@ -16,30 +17,11 @@ export default defineNuxtConfig({
     }
   },
   icon: {
-    // 1. Força o download de todas as coleções usadas durante o build
-    serverBundle: 'remote',
-
-    // 2. Garante que o bundle de cliente contenha os ícones para uso offline/estático
+    // Força os ícones a serem gerados como CSS, evitando chamadas de API 404
+    mode: 'css',
     clientBundle: {
-      // Liste explicitamente os ícones que falharam
-      includeCustomCollections: true,
-      icons: [
-        'ph:instagram-logo',
-        'ph:envelope-simple',
-        'ph:house-fill',
-        'ph:first-aid-fill',
-        'ph:star-fill',
-        'ph:question-fill',
-        'ph:caret-down-bold',
-        'ph:first-aid',
-        'ph:syringe',
-        'ph:stethoscope',
-        'ph:check-circle',
-        'ph:star',
-        'ph:smiley-wink'
-      ],
-      scan: true, // Escaneia automaticamente seus arquivos .vue
-    },
+      scan: true
+    }
   },
   router: {
     options: {

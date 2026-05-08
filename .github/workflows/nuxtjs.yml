@@ -10,30 +10,40 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: corepack enable
-      - uses: actions/setup-node@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
-      # Pick your own package manager and build script
-      - run: npm install
-      - run: npx nuxt build --preset github_pages
+          cache: 'npm' # Habilita o cache nativo para acelerar o build e evitar ENOENT
+
+      - run: corepack enable
+
+      - name: Install dependencies
+        run: npm ci # 'npm ci' é mais limpo e seguro para ambientes de CI/CD
+
+      - name: Build Nuxt
+        # Usamos 'nuxi generate' para sites estáticos no GitHub Pages
+        # A flag --protocol-imports ajuda a resolver problemas de resolução de módulos
+        run: npx nuxi generate --protocol-imports
+        env:
+          NUXT_APP_BASE_URL: /linktree/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # O Nuxt Generate coloca o site pronto na pasta .output/public
           path: ./.output/public
+
   # Deployment job
   deploy:
-    # Add a dependency to the build job
     needs: build
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-    # Deploy to the github_pages environment
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
