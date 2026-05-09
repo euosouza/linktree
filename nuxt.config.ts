@@ -40,7 +40,17 @@ export default defineNuxtConfig({
     '/**': { 
       prerender: true,
       headers: {
-        'Content-Security-Policy': "default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data:; frame-src https://open.spotify.com https://www.instagram.com https://www.youtube.com https://www.youtube-nocookie.com https://youtube.com;",
+        'Content-Security-Policy': [
+          "default-src 'self';",
+          "script-src 'self' 'unsafe-inline' https:;",
+          "style-src 'self' 'unsafe-inline' https:;",
+          "img-src 'self' https: data:;",
+          "font-src 'self' https: data:;",
+          "frame-src https://open.spotify.com https://www.instagram.com https://www.youtube.com https://www.youtube-nocookie.com https://youtube.com;",
+          "connect-src 'self' https:;",
+          "base-uri 'self';",
+          "form-action 'self';"
+        ].join(' '),
         'X-Frame-Options': 'SAMEORIGIN',
         'X-Content-Type-Options': 'nosniff',
         'Referrer-Policy': 'strict-origin-when-cross-origin',
