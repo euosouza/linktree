@@ -18,7 +18,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
   gallery: {
     type: Array,

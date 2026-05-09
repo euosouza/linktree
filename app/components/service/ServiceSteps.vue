@@ -22,7 +22,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
   steps: {
     type: Array,

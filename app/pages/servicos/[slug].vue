@@ -30,7 +30,7 @@
 
 
 
-<script setup>
+<script setup lang="ts">
 const route = useRoute()
 const { getServiceBySlug } = useServices()
 const service = getServiceBySlug(route.params.slug)

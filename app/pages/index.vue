@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const { activeSection, isManualScrolling, navItems } = useNavigation()
 const config = useRuntimeConfig()
 const baseURL = config.app.baseURL
@@ -26,7 +26,7 @@ onMounted(() => {
 
     const visibleEntries = entries.filter(entry => entry.isIntersecting)
     if (visibleEntries.length > 0) {
-      activeSection.value = visibleEntries[0].target.id
+      activeSection.value = visibleEntries[0]?.target.id || ""
     }
   }, observerOptions)
 
@@ -72,7 +72,7 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "VeterinaryCare",
         "name": "Dra. Kelly Fortes | Atendimento Veterinário Domiciliar",

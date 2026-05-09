@@ -27,7 +27,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const { services } = useServices()
 const props = defineProps({
   currentSlug: {

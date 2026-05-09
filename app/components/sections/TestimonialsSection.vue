@@ -1,3 +1,6 @@
+<script setup lang="ts">
+</script>
+
 <template>
   <section class="md:scroll-mt-20" id="depoimentos">
     <div class="py-16 md:py-20 px-6  md:main-container md:mx-auto md:px-8 lg:px-12 space-y-4 md:space-y-0">

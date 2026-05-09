@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
 import FloatingWhatsApp from '~/components/FloatingWhatsApp.vue'
@@ -26,13 +26,13 @@ import FloatingWhatsApp from '~/components/FloatingWhatsApp.vue'
 const { navItems, activeSection, isManualScrolling } = useNavigation()
 const route = useRoute()
 
-const handleSetActive = (id) => {
+const handleSetActive = (id: string) => {
   const item = navItems.find(i => i.id === id)
   if (!item) return
 
   // Normaliza caminhos para comparação (remove barra final se houver)
   const currentPath = route.path.replace(/\/$/, '') || '/'
-  const itemPath = item.path.split('#')[0].replace(/\/$/, '') || '/'
+  const itemPath = item.path?.split('#')[0]?.replace(/\/$/, '') || '/'
   
   // Se o item aponta para uma página diferente, deixa o NuxtLink cuidar da navegação
   // e não fazemos o scroll manual aqui.

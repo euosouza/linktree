@@ -34,7 +34,7 @@ Componentes devem ser pequenos, focados e auto-explicativos.
 
 - **Naming:** PascalCase (ex: `UserCard.vue`).
 - **Estrutura:** 
-  1. `<script setup lang="ts">` (Lógica)
+  1. `<script setup lang="ts" lang="ts">` (Lógica)
   2. `<template>` (Estrutura)
   3. `<style scoped>` (Estilo)
 - **Props:** Use `withDefaults` para valores padrão.

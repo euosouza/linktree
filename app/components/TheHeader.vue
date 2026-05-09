@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const { services } = useServices()
 const { categories } = useFAQ()
 const route = useRoute()

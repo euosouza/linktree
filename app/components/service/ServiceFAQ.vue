@@ -23,7 +23,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
   faqs: {
     type: Array,

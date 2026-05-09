@@ -31,7 +31,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
   serviceName: {
     type: String,

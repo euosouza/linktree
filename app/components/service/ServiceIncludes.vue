@@ -39,7 +39,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
   includes: {
     type: Array,

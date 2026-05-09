@@ -83,7 +83,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const isOpen = ref(false)
 const { services } = useServices()
 
@@ -93,7 +93,7 @@ const form = reactive({
   service: ''
 })
 
-const sanitizeInput = (text) => {
+const sanitizeInput = (text: string) => {
   if (typeof text !== 'string') return ''
   return text
     .trim()
