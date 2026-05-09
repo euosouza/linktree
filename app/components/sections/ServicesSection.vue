@@ -1,3 +1,7 @@
+<script setup>
+const { services } = useServices()
+</script>
+
 <template>
   <section class="bg-on-tertiary-container/5 md:scroll-mt-20" id="servicos">
     <div class="py-16 md:py-20 px-6 pt-8 md:main-container md:mx-auto md:px-8 lg:px-12 space-y-4 md:space-y-0">
@@ -15,67 +19,28 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-8 mt-4 md:mt-0">
-        <!-- Card 1 -->
-        <div v-animate-on-scroll class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
+        <NuxtLink 
+          v-for="(service, index) in services" 
+          :key="service.slug"
+          :to="`/servicos/${service.slug}`"
+          v-animate-on-scroll="`${index * 100}ms`" 
+          class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0"
+        >
           <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
-            <Icon name="ph:first-aid" class="text-teal-800 text-2xl md:text-4xl" />
+            <Icon :name="service.icon" class="text-teal-800 text-2xl md:text-4xl" />
           </div>
-          <div>
-            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">Consulta Geral</h3>
-            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-relaxed md:leading-relaxed">Check-up completo, avaliação clínica minuciosa e orientações nutricionais personalizadas para cada fase da vida.</p>
+          <div class="flex-1">
+            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">{{ service.name }}</h3>
+            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-relaxed md:leading-relaxed line-clamp-2 md:line-clamp-none">{{ service.shortDescription }}</p>
+            
+            <div class="mt-4 md:mt-6 flex items-center gap-2 text-burgundy-800 font-bold text-sm md:opacity-0 md:group-hover:opacity-100 transition-all transform md:translate-x-[-10px] md:group-hover:translate-x-0">
+              Ver detalhes <Icon name="ph:arrow-right-bold" />
+            </div>
           </div>
-        </div>
-        <!-- Card 2 -->
-        <div v-animate-on-scroll="'100ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
-          <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
-            <Icon name="ph:syringe" class="text-teal-800 text-2xl md:text-4xl" />
-          </div>
-          <div>
-            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">Vacinação</h3>
-            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-normal md:leading-relaxed">Protocolo vacinal completo com as melhores marcas do mercado, garantindo imunidade total no conforto do lar.</p>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div v-animate-on-scroll="'200ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
-          <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
-            <Icon name="ph:stethoscope" class="text-teal-800 text-2xl md:text-4xl" />
-          </div>
-          <div>
-            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">Exames Lab</h3>
-            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-normal md:leading-relaxed">Coleta de sangue, urina e outros exames diagnósticos realizados com rapidez e precisão durante a visita.</p>
-          </div>
-        </div>
-        <!-- Card 4 -->
-        <div v-animate-on-scroll="'100ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
-          <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
-            <Icon name="ph:monitor" class="text-teal-800 text-2xl md:text-4xl" />
-          </div>
-          <div>
-            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">Ultrassonografia</h3>
-            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-normal md:leading-relaxed">Diagnóstico por imagem de alta precisão realizado no domicílio, garantindo menos estresse e maior agilidade.</p>
-          </div>
-        </div>
-        <!-- Card 5 -->
-        <div v-animate-on-scroll="'200ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
-          <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
-            <Icon name="ph:lightning" class="text-teal-800 text-2xl md:text-4xl" />
-          </div>
-          <div>
-            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">Laserterapia</h3>
-            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-normal md:leading-relaxed">Terapia moderna para alívio da dor, cicatrização acelerada e controle de processos inflamatórios.</p>
-          </div>
-        </div>
-        <!-- Card 6 -->
-        <div v-animate-on-scroll="'300ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
-          <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
-            <Icon name="ph:activity" class="text-teal-800 text-2xl md:text-4xl" />
-          </div>
-          <div>
-            <h3 class="font-headline-md text-body-lg font-semibold md:text-2xl text-tertiary md:mb-4">Eletro & Ecocardiograma</h3>
-            <p class="text-on-tertiary-fixed-variant text-sm md:text-body-md mt-1 md:mt-0 leading-normal md:leading-relaxed">Check-up cardiológico completo para monitorar a saúde do coração e garantir segurança em cirurgias.</p>
-          </div>
-        </div>
+        </NuxtLink>
       </div>
     </div>
   </section>
 </template>
+
+

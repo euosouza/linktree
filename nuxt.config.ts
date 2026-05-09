@@ -13,7 +13,15 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       crawlLinks: true,
-      routes: ['/']
+      routes: [
+        '/',
+        '/servicos/consulta-geral',
+        '/servicos/vacinacao',
+        '/servicos/exames-laboratoriais',
+        '/servicos/ultrassonografia',
+        '/servicos/laserterapia',
+        '/servicos/eletro-ecocardiograma'
+      ]
     }
   },
   icon: {
@@ -29,10 +37,10 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    '/': { 
+    '/**': { 
       prerender: true,
       headers: {
-        'Content-Security-Policy': "default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data:; frame-src https://open.spotify.com https://www.instagram.com;",
+        'Content-Security-Policy': "default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' https: data:; frame-src https://open.spotify.com https://www.instagram.com https://www.youtube.com https://www.youtube-nocookie.com https://youtube.com;",
         'X-Frame-Options': 'SAMEORIGIN',
         'X-Content-Type-Options': 'nosniff',
         'Referrer-Policy': 'strict-origin-when-cross-origin',
@@ -41,3 +49,4 @@ export default defineNuxtConfig({
     }
   }
 })
+
