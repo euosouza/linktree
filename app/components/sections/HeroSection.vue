@@ -13,7 +13,15 @@ const baseURL = config.app.baseURL
           
           <!-- Mobile Profile Image -->
           <div v-animate-on-scroll="'100ms'" class="md:hidden relative w-32 h-32 rounded-full overflow-hidden border-4 border-tertiary-container/20 shadow-sm">
-            <img alt="Foto de perfil da Dra. Kelly Fortes" class="w-full h-full object-cover" :src="`${baseURL}avatar.jpeg`" width="128" height="128" fetchpriority="high">
+            <NuxtImg 
+              alt="Foto de perfil da Dra. Kelly Fortes" 
+              class="w-full h-full object-cover" 
+              src="/avatar.jpeg" 
+              width="128" 
+              height="128" 
+              format="webp"
+              fetchpriority="high"
+            />
           </div>
  
           <!-- Mobile CRMV Badge -->
@@ -63,7 +71,15 @@ const baseURL = config.app.baseURL
           <div class="relative w-full aspect-square md:max-w-md mx-auto">
             <div class="absolute inset-0 bg-burgundy-800/10 rounded-[30% 70% 70% 30% / 30% 30% 70% 70%] animate-[pulse_8s_infinite]"></div>
             <div class="relative w-full h-full rounded-[30% 70% 70% 30% / 30% 30% 70% 70%] overflow-hidden border-8 border-white shadow-2xl z-10">
-              <img alt="Dra. Kelly Fortes realizando um atendimento veterinário carinhoso" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" :src="`${baseURL}avatar.jpeg`" width="600" height="600" fetchpriority="high">
+              <NuxtImg 
+                alt="Dra. Kelly Fortes realizando um atendimento veterinário carinhoso" 
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
+                src="/avatar.jpeg" 
+                width="600" 
+                height="600" 
+                format="webp"
+                fetchpriority="high"
+              />
             </div>
             <div class="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-tertiary-container/20 z-20 hover:scale-105 transition-transform animate-float">
               <div class="flex items-center gap-4">

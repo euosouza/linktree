@@ -8,7 +8,13 @@
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div v-for="(img, index) in gallery" :key="index" v-animate-on-scroll="`${index * 150}ms`" class="group relative aspect-square rounded-3xl overflow-hidden shadow-lg">
-          <img :src="img" alt="Procedimento veterinário" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <NuxtImg 
+            :src="img" 
+            alt="Procedimento veterinário" 
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            format="webp"
+            loading="lazy"
+          />
           <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <Icon name="ph:magnifying-glass-plus" size="32" class="text-white" />
           </div>

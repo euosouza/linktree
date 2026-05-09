@@ -36,7 +36,7 @@ export const useServices = () => {
       shortDescription: 'Check-up completo e avaliação clínica minuciosa no conforto do seu lar.',
       longDescription: 'A consulta geral domiciliar oferece uma avaliação completa da saúde do seu pet sem o estresse da clínica. Realizamos exame físico detalhado, avaliação nutricional, verificação de parâmetros vitais e orientações personalizadas para cada fase da vida do animal.',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder
-      gallery: [`${baseURL}banner_1.jpeg`, `${baseURL}banner_2.jpeg`],
+      gallery: ['/banner_1.jpeg', '/banner_2.jpeg'],
       includes: [
         'Exame físico completo',
         'Avaliação nutricional',
@@ -64,7 +64,7 @@ export const useServices = () => {
       icon: 'ph:syringe',
       shortDescription: 'Imunização completa com as melhores vacinas do mercado.',
       longDescription: 'Protocolos vacinais personalizados para cães e gatos, utilizando apenas vacinas de marcas líderes mundiais (V10, Antirrábica, Gripe, Giárdia para cães; Quádrupla ou Quíntupla e Antirrábica para gatos).',
-      gallery: [`${baseURL}banner_1.jpeg`, `${baseURL}banner_2.jpeg`],
+      gallery: ['/banner_1.jpeg', '/banner_2.jpeg'],
       includes: [
         'Avaliação pré-vacinal',
         'Aplicação da vacina',
@@ -89,7 +89,7 @@ export const useServices = () => {
       icon: 'ph:test-tube',
       shortDescription: 'Coleta de sangue, urina e outros exames diagnósticos.',
       longDescription: 'Coletamos amostras para exames de sangue, urina e fezes diretamente em sua casa, enviando para laboratórios parceiros de alta confiança com entrega rápida de resultados.',
-      gallery: [`${baseURL}banner_1.jpeg`, `${baseURL}banner_2.jpeg`],
+      gallery: ['/banner_1.jpeg', '/banner_2.jpeg'],
       includes: [
         'Coleta de amostras',
         'Transporte refrigerado adequado',
@@ -114,7 +114,7 @@ export const useServices = () => {
       icon: 'ph:monitor',
       shortDescription: 'Diagnóstico por imagem de alta precisão em casa.',
       longDescription: 'Equipamento portátil de última geração para realização de ultrassonografia abdominal e acompanhamento gestacional sem que o pet precise sair de casa.',
-      gallery: [`${baseURL}banner_1.jpeg`, `${baseURL}banner_2.jpeg`],
+      gallery: ['/banner_1.jpeg', '/banner_2.jpeg'],
       includes: [
         'Exame de imagem detalhado',
         'Laudo assinado por especialista',
@@ -138,7 +138,7 @@ export const useServices = () => {
       icon: 'ph:lightning',
       shortDescription: 'Tratamento moderno para dor e cicatrização.',
       longDescription: 'Terapia não invasiva que utiliza luz laser para acelerar a cicatrização, reduzir inflamações e aliviar dores crônicas ou agudas, especialmente em pets idosos.',
-      gallery: [`${baseURL}banner_1.jpeg`, `${baseURL}banner_2.jpeg`],
+      gallery: ['/banner_1.jpeg', '/banner_2.jpeg'],
       includes: [
         'Sessão de laserterapia',
         'Avaliação da evolução do quadro',
@@ -162,7 +162,7 @@ export const useServices = () => {
       icon: 'ph:activity',
       shortDescription: 'Check-up cardiológico completo para segurança do pet.',
       longDescription: 'Avaliação da saúde do coração através de eletrocardiograma e ecocardiograma, essenciais para pets idosos ou como risco cirúrgico pré-anestésico.',
-      gallery: [`${baseURL}banner_1.jpeg`, `${baseURL}banner_2.jpeg`],
+      gallery: ['/banner_1.jpeg', '/banner_2.jpeg'],
       includes: [
         'Realização do exame cardíaco',
         'Laudo por cardiologista veterinário',
