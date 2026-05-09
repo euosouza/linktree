@@ -8,6 +8,19 @@ export interface ServiceStep {
   description: string
 }
 
+export interface ServiceBenefit {
+  title: string
+  description: string
+  icon: string
+}
+
+export interface ServiceTestimonial {
+  author: string
+  petName: string
+  text: string
+  rating: number
+}
+
 export interface Service {
   slug: string
   name: string
@@ -18,10 +31,16 @@ export interface Service {
   gallery: string[]
   includes: string[]
   steps: ServiceStep[]
+  benefits: ServiceBenefit[]
+  testimonials: ServiceTestimonial[]
   animals: string[]
   duration: string
   aftercare: string
   faqs: ServiceFAQ[]
+  ctaOverride?: {
+    title: string
+    description: string
+  }
 }
 
 export const useServices = () => {
@@ -50,6 +69,14 @@ export const useServices = () => {
         { title: 'Avaliação', description: 'Consulta realizada no ambiente onde o pet se sente seguro.' },
         { title: 'Plano de Saúde', description: 'Definição de tratamentos ou exames necessários.' }
       ],
+      benefits: [
+        { title: 'Zero Estresse', description: 'Seu pet fica calmo no ambiente que já conhece.', icon: 'ph:heart-break' },
+        { title: 'Atenção Total', description: 'Consulta sem pressa e focada 100% no seu animal.', icon: 'ph:users' },
+        { title: 'Conveniência', description: 'Economize tempo de deslocamento e trânsito.', icon: 'ph:car' }
+      ],
+      testimonials: [
+        { author: 'Ana Silva', petName: 'Luna', text: 'A Dra. Kelly foi maravilhosa com a Luna. Ela costuma ser muito arisca em clínicas, mas em casa ficou super tranquila.', rating: 5 }
+      ],
       animals: ['Cães', 'Gatos', 'Coelhos', 'Roedores'],
       duration: '45 a 60 minutos',
       aftercare: 'Siga as orientações da prescrição e monitore o comportamento do pet.',
@@ -76,6 +103,14 @@ export const useServices = () => {
         { title: 'Aplicação', description: 'Procedimento rápido e indolor em casa.' },
         { title: 'Observação', description: 'Acompanhamento breve para garantir que não haja reações imediatas.' }
       ],
+      benefits: [
+        { title: 'Vacinas Importadas', description: 'Utilizamos apenas as melhores marcas mundiais.', icon: 'ph:shield-check' },
+        { title: 'Imunidade Garantida', description: 'Protocolos rigorosos de armazenamento e transporte.', icon: 'ph:thermometer' },
+        { title: 'Carteirinha Digital', description: 'Histórico sempre à mão no seu celular.', icon: 'ph:identification-card' }
+      ],
+      testimonials: [
+        { author: 'Carlos Souza', petName: 'Thor', text: 'Vacinar em casa foi a melhor decisão. O Thor nem percebeu a picada!', rating: 5 }
+      ],
       animals: ['Cães', 'Gatos'],
       duration: '30 minutos',
       aftercare: 'Mantenha o pet em repouso e evite banhos por 48 horas após a vacinação.',
@@ -101,6 +136,14 @@ export const useServices = () => {
         { title: 'Coleta', description: 'Realizada com técnica humanizada para minimizar desconforto.' },
         { title: 'Resultado', description: 'Envio do laudo via WhatsApp ou e-mail em até 24-48h.' }
       ],
+      benefits: [
+        { title: 'Coleta Humanizada', description: 'Técnicas que minimizam o desconforto do pet.', icon: 'ph:hand-heart' },
+        { title: 'Agilidade', description: 'Resultados rápidos enviados diretamente para você.', icon: 'ph:lightning' },
+        { title: 'Laboratórios de Elite', description: 'Parceria com os melhores centros diagnósticos.', icon: 'ph:flask' }
+      ],
+      testimonials: [
+        { author: 'Beatriz Lima', petName: 'Mel', text: 'A coleta de sangue sempre foi um trauma, mas com a Dra. Kelly foi super rápido e sem choro.', rating: 5 }
+      ],
       animals: ['Cães', 'Gatos', 'Outros'],
       duration: '20 a 40 minutos',
       aftercare: 'Pode haver um pequeno hematoma no local da coleta, que desaparece em poucos dias.',
@@ -125,6 +168,11 @@ export const useServices = () => {
         { title: 'Exame', description: 'Duração de aproximadamente 30 minutos em local tranquilo.' },
         { title: 'Laudo', description: 'Laudo completo entregue após a análise.' }
       ],
+      benefits: [
+        { title: 'Equipamento Portátil', description: 'Alta tecnologia levada até a sua sala.', icon: 'ph:device-mobile' },
+        { title: 'Conforto Máximo', description: 'Seu pet deitado no tapete de casa durante o exame.', icon: 'ph:house' }
+      ],
+      testimonials: [],
       animals: ['Cães', 'Gatos'],
       duration: '40 a 60 minutos',
       aftercare: 'O pet pode retornar às atividades normais imediatamente.',
@@ -149,6 +197,11 @@ export const useServices = () => {
         { title: 'Aplicação', description: 'Uso de óculos de proteção (se necessário) e aplicação local.' },
         { title: 'Manutenção', description: 'Definição da frequência das próximas sessões.' }
       ],
+      benefits: [
+        { title: 'Alívio Imediato', description: 'Redução da dor já na primeira sessão.', icon: 'ph:sparkle' },
+        { title: 'Sem Medicamentos', description: 'Tratamento natural e sem efeitos colaterais.', icon: 'ph:leaf' }
+      ],
+      testimonials: [],
       animals: ['Cães', 'Gatos', 'Animais Silvestres'],
       duration: '20 a 30 minutos',
       aftercare: 'O animal costuma sentir relaxamento imediato após a sessão.',
@@ -173,6 +226,11 @@ export const useServices = () => {
         { title: 'Monitoramento', description: 'Captura dos sinais elétricos ou imagens do coração.' },
         { title: 'Conclusão', description: 'Orientação sobre a saúde cardiovascular do pet.' }
       ],
+      benefits: [
+        { title: 'Check-up Completo', description: 'Avaliação detalhada da saúde do coração.', icon: 'ph:activity' },
+        { title: 'Risco Cirúrgico', description: 'Segurança total para procedimentos anestésicos.', icon: 'ph:shield-plus' }
+      ],
+      testimonials: [],
       animals: ['Cães', 'Gatos'],
       duration: '45 a 60 minutos',
       aftercare: 'Nenhum cuidado especial após o exame.',

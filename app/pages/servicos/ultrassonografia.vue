@@ -6,6 +6,8 @@
       
       <ServiceBenefits :benefits="service.benefits" />
       
+      <ServicePrepChecklist :checklist="prepChecklist" />
+      
       <ServiceIncludes 
         :includes="service.includes" 
         :icon="service.icon" 
@@ -30,51 +32,38 @@
       
       <ServiceCTA 
         :service-name="service.name" 
-        :cta-title="service.ctaOverride?.title"
-        :cta-description="service.ctaOverride?.description"
       />
     </main>
   </div>
 </template>
 
-
-
 <script setup lang="ts">
 import Breadcrumbs from '../../../libs/ui/components/breadcrumbs/Breadcrumbs.vue'
 
-const route = useRoute()
 const { getServiceBySlug } = useServices()
-const service = getServiceBySlug(route.params.slug as string)
+const service = getServiceBySlug('ultrassonografia')
 
 if (!service) {
   throw createError({ statusCode: 404, statusMessage: 'Serviço não encontrado' })
 }
 
-const { showHeader } = useNavigation()
+const prepChecklist = [
+  { title: 'Jejum Alimentar', description: 'Necessário para visualização nítida dos órgãos abdominais.' },
+  { title: 'Bexiga Cheia', description: 'Tente evitar que o pet urine logo antes do exame.' },
+  { title: 'Tricotomia (Raspa)', description: 'Uma pequena área do abdome precisará ser raspada para o contato do gel.' }
+]
 
+const { showHeader } = useNavigation()
 
 onMounted(() => {
   showHeader.value = true
 })
 
-onUnmounted(() => {
-  showHeader.value = true
-})
-
-
-useHead({
-  title: `${service.name} | Dra. Kelly Fortes`,
-  meta: [
-    { name: 'description', content: service.shortDescription }
-  ]
-})
-
 useSeoMeta({
-  title: `${service.name} | Dra. Kelly Fortes`,
-  ogTitle: `${service.name} | Dra. Kelly Fortes`,
+  title: `${service.name} em Domicílio | Dra. Kelly Fortes`,
+  ogTitle: `${service.name} em Domicílio | Dra. Kelly Fortes`,
   description: service.shortDescription,
   ogDescription: service.shortDescription,
   ogType: 'website'
 })
 </script>
-

@@ -30,21 +30,16 @@
       
       <ServiceCTA 
         :service-name="service.name" 
-        :cta-title="service.ctaOverride?.title"
-        :cta-description="service.ctaOverride?.description"
       />
     </main>
   </div>
 </template>
 
-
-
 <script setup lang="ts">
 import Breadcrumbs from '../../../libs/ui/components/breadcrumbs/Breadcrumbs.vue'
 
-const route = useRoute()
 const { getServiceBySlug } = useServices()
-const service = getServiceBySlug(route.params.slug as string)
+const service = getServiceBySlug('consulta-geral')
 
 if (!service) {
   throw createError({ statusCode: 404, statusMessage: 'Serviço não encontrado' })
@@ -52,29 +47,15 @@ if (!service) {
 
 const { showHeader } = useNavigation()
 
-
 onMounted(() => {
   showHeader.value = true
 })
 
-onUnmounted(() => {
-  showHeader.value = true
-})
-
-
-useHead({
-  title: `${service.name} | Dra. Kelly Fortes`,
-  meta: [
-    { name: 'description', content: service.shortDescription }
-  ]
-})
-
 useSeoMeta({
-  title: `${service.name} | Dra. Kelly Fortes`,
-  ogTitle: `${service.name} | Dra. Kelly Fortes`,
+  title: `${service.name} em Domicílio | Dra. Kelly Fortes`,
+  ogTitle: `${service.name} em Domicílio | Dra. Kelly Fortes`,
   description: service.shortDescription,
   ogDescription: service.shortDescription,
   ogType: 'website'
 })
 </script>
-
