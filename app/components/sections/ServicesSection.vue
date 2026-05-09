@@ -46,7 +46,7 @@
           </div>
         </div>
         <!-- Card 4 -->
-        <div v-animate-on-scroll="'300ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
+        <div v-animate-on-scroll="'100ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
           <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
             <Icon name="ph:monitor" class="text-teal-800 text-2xl md:text-4xl" />
           </div>
@@ -56,7 +56,7 @@
           </div>
         </div>
         <!-- Card 5 -->
-        <div v-animate-on-scroll="'400ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
+        <div v-animate-on-scroll="'200ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
           <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
             <Icon name="ph:lightning" class="text-teal-800 text-2xl md:text-4xl" />
           </div>
@@ -66,7 +66,7 @@
           </div>
         </div>
         <!-- Card 6 -->
-        <div v-animate-on-scroll="'500ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
+        <div v-animate-on-scroll="'300ms'" class="group bg-white p-5 md:p-12 rounded-xl md:rounded-[2.5rem] border border-tertiary-container/20 shadow-[0px_4px_20px_rgba(106,0,57,0.05)] md:shadow-sm md:hover:shadow-xl  md:hover:-translate-y-2 transition-all duration-300 flex md:flex-col items-start gap-4 md:gap-0">
           <div class="w-12 h-12 md:w-20 md:h-20 bg-teal-100 flex items-center justify-center rounded-lg md:rounded-[1.5rem] shrink-0 md:mb-8 group-hover:scale-110 transition-transform">
             <Icon name="ph:activity" class="text-teal-800 text-2xl md:text-4xl" />
           </div>

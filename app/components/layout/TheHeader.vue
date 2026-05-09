@@ -1,7 +1,8 @@
 <template>
   <header class="bg-on-tertiary/80 backdrop-blur-md sticky top-0 z-50 shadow-sm w-full border-b border-tertiary-container/20 hidden md:block">
     <div class="main-container mx-auto py-8 flex justify-between items-center px-8 md:px-12">
-      <span class="text-headline-md font-headline-md text-burgundy-800"></span>
+      <Icon name="ph:paw-print-fill" size="36" class="text-burgundy-800" />
+
       <div class="hidden md:flex gap-10 items-center">
         <NuxtLink v-for="item in navItems" 
            :key="item.id"

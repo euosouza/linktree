@@ -1,13 +1,14 @@
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive('animate-on-scroll', {
-    getSSRProps(binding, vnode) {
+    getSSRProps() {
       return {}
     },
     mounted(el, binding) {
-      // Classes iniciais (estado oculto e preparação da transição)
-      el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-1000', 'ease-out');
+      // 1. Aplicamos apenas o estado inicial oculto, SEM as classes de transição.
+      // Isso evita que o elemento "anime para fora" (flicker) durante a hidratação.
+      el.classList.add('opacity-0', 'translate-y-8');
 
-      // Se houver um atraso passado como modificador ou valor (ex: v-animate-on-scroll.delay-200)
+      // Valor do delay vindo do binding (ex: v-animate-on-scroll="'200ms'")
       if (binding.value) {
         el.style.transitionDelay = binding.value;
       }
@@ -16,25 +17,33 @@ export default defineNuxtPlugin((nuxtApp) => {
         (entries, observer) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              // Remove classes de estado oculto
+              // 3. Quando visível, removemos o estado oculto e garantimos que o visível seja aplicado.
+              // As classes de transição (adicionadas no passo 2) farão o trabalho.
               el.classList.remove('opacity-0', 'translate-y-8');
-              // Adiciona classes de estado visível
               el.classList.add('opacity-100', 'translate-y-0');
               
-              // Para de observar depois que animar (anima apenas uma vez)
+              // Para de observar após animar
               observer.unobserve(el);
             }
           });
         },
         {
-          threshold: 0.1, // Dispara quando 10% do elemento estiver visível
-          rootMargin: '0px 0px -50px 0px' // Margem para disparar um pouco antes
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
         }
       );
 
-      // Espera um frame para garantir que o layout inicializou
+      // 2. Usamos requestAnimationFrame para garantir que o estado inicial (oculto) foi processado
+      // antes de adicionarmos as classes de transição e começarmos a observar.
+      // Isso evita o flicker sem causar reflow forçado (como offsetHeight).
       requestAnimationFrame(() => {
-        observer.observe(el);
+        el.classList.add('transition-all', 'duration-1000', 'ease-out');
+        
+        // Pequeno atraso adicional para garantir que a transição seja registrada pelo navegador
+        // antes que a mudança de opacidade ocorra (caso o elemento já esteja na tela).
+        setTimeout(() => {
+          observer.observe(el);
+        }, 20);
       });
     }
   });
