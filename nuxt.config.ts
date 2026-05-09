@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/image'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/icon', '@nuxt/image', '@nuxtjs/google-fonts'],
   ssr: true,
   nitro: {
     preset: 'static',
@@ -23,6 +23,18 @@ export default defineNuxtConfig({
         '/servicos/eletro-ecocardiograma'
       ]
     }
+  },
+  googleFonts: {
+    families: {
+      'Plus Jakarta Sans': [400, 600, 700]
+    },
+    display: 'swap',
+    download: true,
+    inject: true,
+    base64: false,
+    prefetch: true,
+    preconnect: true,
+    preload: true
   },
   icon: {
     // Força os ícones a serem gerados como CSS, evitando chamadas de API 404

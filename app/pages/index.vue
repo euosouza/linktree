@@ -52,14 +52,6 @@ useHead({
   ],
   link: [
     { rel: 'canonical', href: 'https://kellyfortes.vet.br' },
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap',
-      media: 'print',
-      onload: "this.media='all'"
-    },
     {
       rel: 'preload',
       as: 'image',
