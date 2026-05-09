@@ -59,30 +59,52 @@
         </div>
 
         <!-- FAQ — order 4 mobile | col 8–12 row 2 desktop -->
-        <div v-animate-on-scroll="'150ms'" class="order-4 md:order-none md:col-span-5 md:row-span-1 bg-tertiary/5 p-6 rounded-xl space-y-3 md:scroll-mt-20" id="faq">
-          <h2 class="text-headline-md font-headline-md text-tertiary px-2 mb-10">FAQ</h2>
-          <details class="group bg-white rounded-xl border border-tertiary-container/20 overflow-hidden shadow-sm">
-            <summary class="flex justify-between items-center p-4 cursor-pointer list-none font-label-md font-bold text-tertiary">
-              <span>Quais regiões?</span>
-              <Icon name="ph:caret-down-bold" class="transition-transform group-open:rotate-180 text-burgundy-800" size="20" />
-            </summary>
-            <div class="px-4 pb-4 text-sm text-on-tertiary-fixed-variant">Raio de até 30km da capital.</div>
-          </details>
-          <details class="group bg-white rounded-xl border border-tertiary-container/20 overflow-hidden shadow-sm">
-            <summary class="flex justify-between items-center p-4 cursor-pointer list-none font-label-md font-bold text-tertiary">
-              <span>Horários?</span>
-              <Icon name="ph:caret-down-bold" class="transition-transform group-open:rotate-180 text-burgundy-800" size="20" />
-            </summary>
-            <div class="px-4 pb-4 text-sm text-on-tertiary-fixed-variant">Seg-Sex: 8h-20h | Sáb: 9h-14h.</div>
-          </details>
-          <details class="group bg-white rounded-xl border border-tertiary-container/20 overflow-hidden shadow-sm">
-            <summary class="flex justify-between items-center p-4 cursor-pointer list-none font-label-md font-bold text-tertiary">
-              <span>Pagamento?</span>
-              <Icon name="ph:caret-down-bold" class="transition-transform group-open:rotate-180 text-burgundy-800" size="20" />
-            </summary>
-            <div class="px-4 pb-4 text-sm text-on-tertiary-fixed-variant">Pix, Débito e Crédito em domicílio.</div>
-          </details>
+        <div v-animate-on-scroll="'150ms'" class="order-4 md:order-none md:col-span-5 md:row-span-1 bg-tertiary/5 p-6 md:p-10 rounded-[2.5rem] flex flex-col h-full md:scroll-mt-20" id="faq">
+          <div class="flex items-center justify-between mb-8 px-2">
+            <h2 class="text-2xl font-bold text-tertiary font-headline-md">Dúvidas</h2>
+            <NuxtLink to="/faq" class="text-xs font-bold text-burgundy-800 hover:underline uppercase tracking-widest flex items-center gap-1">
+              Ver todas
+              <Icon name="ph:arrow-right-bold" />
+            </NuxtLink>
+          </div>
+          
+          <div class="space-y-3">
+            <details class="group bg-white rounded-2xl border border-tertiary-container/10 overflow-hidden shadow-sm transition-all hover:border-burgundy-500/20">
+              <summary class="flex justify-between items-center p-5 cursor-pointer list-none font-bold text-tertiary text-sm md:text-base">
+                <span>Qual a região atendida?</span>
+                <Icon name="ph:caret-down-bold" class="transition-transform group-open:rotate-180 text-burgundy-800" size="18" />
+              </summary>
+              <div class="px-5 pb-5 text-sm text-on-tertiary-fixed-variant leading-relaxed">
+                Atendemos em domicílio em um raio de até 30km de <strong>São Paulo (Capital)</strong> e região metropolitana.
+              </div>
+            </details>
+
+            <details class="group bg-white rounded-2xl border border-tertiary-container/10 overflow-hidden shadow-sm transition-all hover:border-burgundy-500/20">
+              <summary class="flex justify-between items-center p-5 cursor-pointer list-none font-bold text-tertiary text-sm md:text-base">
+                <span>Quais animais atendem?</span>
+                <Icon name="ph:caret-down-bold" class="transition-transform group-open:rotate-180 text-burgundy-800" size="18" />
+              </summary>
+              <div class="px-5 pb-5 text-sm text-on-tertiary-fixed-variant leading-relaxed">
+                A Dra. Kelly é especializada no atendimento clínico de <strong>cães e gatos</strong> de todas as idades.
+              </div>
+            </details>
+
+            <details class="group bg-white rounded-2xl border border-tertiary-container/10 overflow-hidden shadow-sm transition-all hover:border-burgundy-500/20">
+              <summary class="flex justify-between items-center p-5 cursor-pointer list-none font-bold text-tertiary text-sm md:text-base">
+                <span>Aceita plano de saúde?</span>
+                <Icon name="ph:caret-down-bold" class="transition-transform group-open:rotate-180 text-burgundy-800" size="18" />
+              </summary>
+              <div class="px-5 pb-5 text-sm text-on-tertiary-fixed-variant leading-relaxed">
+                Não trabalhamos com convênio direto, mas fornecemos recibos para você solicitar o <strong>reembolso</strong> junto ao seu plano.
+              </div>
+            </details>
+          </div>
+
+          <NuxtLink to="/faq" class="mt-auto pt-6 text-center text-sm font-bold text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors hidden md:block">
+            Ainda tem dúvidas? Acesse nossa central de ajuda completa.
+          </NuxtLink>
         </div>
+
       </div>
     </div>
   </section>

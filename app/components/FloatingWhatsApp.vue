@@ -69,16 +69,6 @@
               </div>
             </div>
 
-            <div>
-              <label class="block text-xs font-bold text-tertiary uppercase tracking-wider mb-2 ml-1">Observações (Opcional)</label>
-              <textarea 
-                v-model="form.notes" 
-                rows="3"
-                placeholder="Conte-nos um pouco mais sobre a necessidade..."
-                class="w-full bg-on-tertiary-container/5 border border-tertiary-container/10 rounded-2xl px-5 py-4 text-tertiary focus:outline-none focus:ring-2 focus:ring-[#25D366]/50 transition-all resize-none"
-              ></textarea>
-            </div>
-
             <button 
               type="submit"
               class="w-full bg-burgundy-700 text-white font-bold py-5 rounded-2xl shadow-xl hover:bg-burgundy-800 hover:shadow-burgundy-800/20 hover:-translate-y-1 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 mt-4"
@@ -100,17 +90,11 @@ const { services } = useServices()
 const form = reactive({
   name: '',
   petName: '',
-  service: '',
-  notes: ''
+  service: ''
 })
 
 const handleSubmit = () => {
   let message = `Olá, Dra. Kelly! Meu nome é ${form.name}. Gostaria de agendar um atendimento de ${form.service} para o meu pet ${form.petName}.`
-  
-  if (form.notes.trim()) {
-    message += `\n\n*Observações:* ${form.notes}`
-  }
-
   const encodedMessage = encodeURIComponent(message)
   const whatsappUrl = `https://wa.me/5531999581716?text=${encodedMessage}`
   
