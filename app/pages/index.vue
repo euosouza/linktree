@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Breadcrumbs :items="[{ name: 'Início', item: '/' }]" />
     <SectionsHeroSection />
     <SectionsServicesSection />
     <SectionsHumanizedCareSection />
@@ -10,6 +11,8 @@
 </template>
 
 <script setup lang="ts">
+import Breadcrumbs from '../../libs/ui/components/breadcrumbs/Breadcrumbs.vue'
+
 const { activeSection, isManualScrolling, navItems } = useNavigation()
 const config = useRuntimeConfig()
 const baseURL = config.app.baseURL

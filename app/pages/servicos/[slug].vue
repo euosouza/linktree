@@ -1,5 +1,12 @@
 <template>
-  <div v-if="service">    
+  <div v-if="service" class="bg-on-tertiary-container/5 min-h-screen"> 
+    <div class="main-container mx-auto px-6 pt-8 bg-burgundy-50">  
+      <Breadcrumbs :items="[
+        { name: 'Início', item: '/' },
+        { name: 'Serviços', item: '/#servicos' },
+        { name: service.name, item: `/servicos/${service.slug}` }
+      ]" />
+    </div>   
     <main>
       <ServiceHero :service="service" />
       
@@ -31,9 +38,11 @@
 
 
 <script setup lang="ts">
+import Breadcrumbs from '../../../libs/ui/components/breadcrumbs/Breadcrumbs.vue'
+
 const route = useRoute()
 const { getServiceBySlug } = useServices()
-const service = getServiceBySlug(route.params.slug)
+const service = getServiceBySlug(route.params.slug as string)
 
 if (!service) {
   throw createError({ statusCode: 404, statusMessage: 'Serviço não encontrado' })

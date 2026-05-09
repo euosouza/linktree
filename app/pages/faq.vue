@@ -1,9 +1,15 @@
 <template>
-  <div class="bg-on-tertiary-container/5 min-h-screen pt-32 pb-20">
-    <div class="main-container mx-auto px-6">
+  <div class="bg-on-tertiary-container/5 min-h-screen">
+    <div class="main-container mx-auto px-6 pt-8">
+      <Breadcrumbs :items="[
+        { name: 'Início', item: '/' },
+        { name: 'FAQ', item: '/faq' }
+      ]" />
+    </div>
+    <div class="main-container mx-auto px-6  pt-28 pb-20">
       
       <!-- Cabecalho da Pagina -->
-      <header class="max-w-3xl mx-auto text-center mb-16">
+      <header class="max-w-3xl mx-auto text-center mb-20">
         <h1 class="text-4xl md:text-5xl font-bold text-tertiary font-headline-md mb-6">Central de Ajuda</h1>
         <p class="text-on-tertiary-fixed-variant text-lg leading-relaxed">
           Tire suas duvidas sobre o atendimento domiciliar, procedimentos e formas de pagamento da Dra. Kelly Fortes.
@@ -118,18 +124,21 @@
 </template>
 
 <script setup lang="ts">
+import Breadcrumbs from '../../libs/ui/components/breadcrumbs/Breadcrumbs.vue'
+
 const { categories, faqs } = useFAQ()
 const route = useRoute()
 
 const searchQuery = ref('')
 const selectedCategory = ref('all')
-const openIndex = ref(null)
+const openIndex = ref<number | null>(null)
 
 // Observar mudanca de categoria na URL
 watch(() => route.query.category, (newCat) => {
-  if (newCat && categories.some(c => c.id === newCat)) {
-    selectedCategory.value = newCat
-  } else if (!newCat) {
+  const catId = Array.isArray(newCat) ? newCat[0] : newCat
+  if (catId && categories.some(c => c.id === catId)) {
+    selectedCategory.value = catId as string
+  } else if (!catId) {
     selectedCategory.value = 'all'
   }
 }, { immediate: true })
@@ -144,7 +153,7 @@ const filteredFaqs = computed(() => {
   })
 })
 
-const toggleFaq = (index) => {
+const toggleFaq = (index: number) => {
   openIndex.value = openIndex.value === index ? null : index
 }
 
