@@ -3,13 +3,12 @@
     <!-- Botão Flutuante -->
     <button 
       @click="isOpen = true"
-      class="fixed bottom-8 md:bottom-10 right-6 z-50 group flex items-center justify-center md:justify-start gap-3 bg-[#1b7a43] text-white w-14 h-14 md:w-auto md:h-auto md:p-3 md:pr-6 rounded-full shadow-2xl hover:bg-[#155d33] hover:scale-105 transition-all duration-300 animate-pulse-slow"
+      class="fixed bottom-8 md:bottom-10 right-6 z-50 group flex items-center justify-center md:justify-start gap-3 bg-[#1b7a43] text-white w-14 h-14 md:w-auto md:h-auto md:p-3 rounded-full shadow-2xl hover:bg-[#155d33] hover:scale-105 transition-all duration-300 animate-pulse-slow"
       aria-label="Agendar via WhatsApp"
     >
       <div class="relative flex items-center justify-center">
         <Icon name="ph:whatsapp-logo-fill" size="32" class="relative z-10" />
       </div>
-      <span class="hidden md:block font-bold text-sm uppercase tracking-wide">Agendar via WhatsApp</span>
     </button>
 
     <!-- Overlay do Modal -->
