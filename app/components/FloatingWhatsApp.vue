@@ -93,13 +93,34 @@ const form = reactive({
   service: ''
 })
 
+const sanitizeInput = (text) => {
+  if (typeof text !== 'string') return ''
+  return text
+    .trim()
+    .replace(/<[^>]*>?/gm, '') // Remove tags HTML
+    .slice(0, 100) // Limite de segurança
+}
+
 const handleSubmit = () => {
-  let message = `Olá, Dra. Kelly! Meu nome é ${form.name}. Gostaria de agendar um atendimento de ${form.service} para o meu pet ${form.petName}.`
+  const sanitizedName = sanitizeInput(form.name)
+  const sanitizedPetName = sanitizeInput(form.petName)
+  const sanitizedService = sanitizeInput(form.service)
+
+  if (!sanitizedName || !sanitizedPetName || !sanitizedService) {
+    return
+  }
+
+  let message = `Olá, Dra. Kelly! Meu nome é ${sanitizedName}. Gostaria de agendar um atendimento de ${sanitizedService} para o meu pet ${sanitizedPetName}.`
   const encodedMessage = encodeURIComponent(message)
   const whatsappUrl = `https://wa.me/5531999581716?text=${encodedMessage}`
   
   window.open(whatsappUrl, '_blank')
   isOpen.value = false
+  
+  // Limpa o formulário após o envio
+  form.name = ''
+  form.petName = ''
+  form.service = ''
 }
 </script>
 
