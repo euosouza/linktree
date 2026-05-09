@@ -63,7 +63,7 @@ const handleNavClick = (item) => {
 <template>
   <header class="bg-white sticky top-0 z-50 shadow-sm w-full border-b border-tertiary-container/10">
     <div class="main-container w-full mx-auto py-4 md:py-6 flex justify-between items-center px-6 md:px-12">
-      <NuxtLink to="/" class="flex items-center gap-2" @click="closeMobileMenu">
+      <NuxtLink to="/" class="flex items-center gap-2" @click="closeMobileMenu" aria-label="Dra. Kelly Fortes - Início">
         <Icon name="ph:paw-print-fill" size="32" class="text-burgundy-800" />
       </NuxtLink>
 
@@ -164,7 +164,7 @@ const handleNavClick = (item) => {
       <button 
         class="md:hidden flex items-center justify-center w-11 h-11 rounded-xl bg-burgundy-800 text-white transition-all active:scale-95 shadow-md"
         @click="toggleMobileMenu"
-        aria-label="Menu"
+        :aria-label="isMobileMenuOpen ? 'Fechar Menu' : 'Abrir Menu'"
       >
         <Icon :name="isMobileMenuOpen ? 'ph:x-bold' : 'ph:list-bold'" size="28" />
       </button>

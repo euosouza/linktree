@@ -3,7 +3,7 @@
     <!-- Botão Flutuante -->
     <button 
       @click="isOpen = true"
-      class="fixed bottom-8 md:bottom-10 right-6 z-50 group flex items-center justify-center md:justify-start gap-3 bg-[#25D366] text-white w-14 h-14 md:w-auto md:h-auto md:p-3 md:pr-6 rounded-full shadow-2xl hover:bg-[#20bd59] hover:scale-105 transition-all duration-300 animate-pulse-slow"
+      class="fixed bottom-8 md:bottom-10 right-6 z-50 group flex items-center justify-center md:justify-start gap-3 bg-[#1b7a43] text-white w-14 h-14 md:w-auto md:h-auto md:p-3 md:pr-6 rounded-full shadow-2xl hover:bg-[#155d33] hover:scale-105 transition-all duration-300 animate-pulse-slow"
       aria-label="Agendar via WhatsApp"
     >
       <div class="relative flex items-center justify-center">
@@ -19,7 +19,7 @@
         
         <!-- Conteúdo do Modal -->
         <div class="relative bg-white w-full max-w-md rounded-[2.5rem] shadow-2xl overflow-hidden border border-tertiary-container/10 p-8 md:p-10 animate-in fade-in zoom-in duration-300">
-          <button @click="isOpen = false" class="absolute top-6 right-6 text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors">
+          <button @click="isOpen = false" class="absolute top-6 right-6 text-on-tertiary-fixed-variant hover:text-burgundy-800 transition-colors" aria-label="Fechar">
             <Icon name="ph:x-bold" size="24" />
           </button>
 
