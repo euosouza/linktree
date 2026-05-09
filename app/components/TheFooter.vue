@@ -1,12 +1,11 @@
 <script setup lang="ts">
 const { services } = useServices()
 
-defineProps({
-  navItems: {
-    type: Array,
-    required: true
-  }
-})
+import type { NavItem } from '~/composables/useNavigation'
+
+defineProps<{
+  navItems: NavItem[]
+}>()
 
 defineEmits(['setActive'])
 </script>

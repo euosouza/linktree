@@ -1,9 +1,17 @@
+export interface NavItem {
+  id: string
+  label: string
+  path: string
+  icon: string
+  ariaLabel: string
+}
+
 export const useNavigation = () => {
   const activeSection = useState('activeSection', () => 'home')
   const isManualScrolling = useState('isManualScrolling', () => false)
   const showHeader = useState('showHeader', () => true)
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { id: 'home', label: 'Início', icon: 'ph:house-fill', ariaLabel: 'Ir para o início', path: '/' },
     { id: 'servicos', label: 'Serviços', icon: 'ph:first-aid-fill', ariaLabel: 'Ver serviços', path: '/#servicos' },
     { id: 'depoimentos', label: 'Depoimentos', icon: 'ph:star-fill', ariaLabel: 'Ver depoimentos', path: '/#depoimentos' },

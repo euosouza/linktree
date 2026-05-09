@@ -3,23 +3,19 @@ const { services } = useServices()
 const { categories } = useFAQ()
 const route = useRoute()
 
-const openMenuId = ref(null)
+const openMenuId = ref<string | null>(null)
 const isMobileMenuOpen = ref(false)
 
-const props = defineProps({
-  navItems: {
-    type: Array,
-    required: true
-  },
-  activeSection: {
-    type: String,
-    required: true
-  }
-})
+import type { NavItem } from '~/composables/useNavigation'
+
+const props = defineProps<{
+  navItems: NavItem[]
+  activeSection: string
+}>()
 
 const emit = defineEmits(['setActive'])
 
-const isItemActive = (itemId) => {
+const isItemActive = (itemId: string) => {
   const isHome = route.path === '/' || route.path === '/linktree' || route.path === '/linktree/'
   
   // Specific logic for pages
@@ -48,7 +44,7 @@ const closeMobileMenu = () => {
   document.body.style.overflow = ''
 }
 
-const handleNavClick = (item) => {
+const handleNavClick = (item: NavItem) => {
   if (item.id === 'servicos' || item.id === 'faq') {
     openMenuId.value = openMenuId.value === item.id ? null : item.id
     return
