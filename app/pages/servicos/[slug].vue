@@ -22,11 +22,11 @@
       
       <ServiceAftercare :aftercare="service.aftercare" />
       
-      <ServiceTestimonials :testimonials="service.testimonials" />
+      
       
       <ServiceFAQ :faqs="service.faqs" />
       
-      <ServiceRelated :current-slug="service.slug" />
+      
       
       <ServiceCTA 
         :service-name="service.name" 

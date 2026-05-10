@@ -1,10 +1,9 @@
 <template>
-  <section class="py-16 md:py-32 relative" aria-labelledby="vaccine-list-title">
-    <!-- Background Decoration Orbs -->
+  <section class="py-16 md:py-32 bg-white relative" aria-labelledby="vaccine-list-title">
+    <!-- Subtle Background Decors -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <div class="absolute -right-[8%] top-[15%] w-[40rem] h-[40rem] bg-burgundy-400/5 rounded-full blur-[140px]"></div>
-      <div class="absolute -left-[8%] bottom-[5%] w-[30rem] h-[30rem] bg-teal-400/5 rounded-full blur-[120px]"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-50/60 via-transparent to-transparent"></div>
+      <div class="absolute -right-[10%] top-[15%] w-[30rem] h-[30rem] bg-burgundy-500/5 rounded-full blur-[120px]"></div>
+      <div class="absolute -left-[10%] bottom-[5%] w-[25rem] h-[25rem] bg-teal-500/5 rounded-full blur-[120px]"></div>
     </div>
 
     <div class="main-container mx-auto px-6 md:px-12 relative z-10">
@@ -20,12 +19,9 @@
 
         <h2
           id="vaccine-list-title"
-          class="text-4xl md:text-6xl lg:text-7xl font-black font-headline-lg text-tertiary mb-8 leading-tight"
+          class="text-3xl md:text-5xl font-bold font-headline-lg text-tertiary mb-10 leading-tight"
         >
-          Vacinas de
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-burgundy-700 to-burgundy-900">
-            Qualidade Mundial
-          </span>
+          Vacinas de <span class="text-burgundy-700">Qualidade Mundial</span>
         </h2>
 
         <p class="text-lg md:text-xl text-on-tertiary-fixed-variant max-w-2xl leading-relaxed">
@@ -57,28 +53,28 @@
             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
           >
             <article
-              v-for="(vaccine, index) in activeVaccines"
+              v-for="vaccine in activeVaccines"
               :key="vaccine.name"
               class="group bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 relative overflow-hidden flex flex-col h-full"
               :aria-label="`Vacina: ${vaccine.name}`"
             >
               <!-- Hover Glow -->
               <div
-                class="absolute top-0 right-0 w-40 h-40 bg-burgundy-100/40 rounded-full blur-3xl -mr-20 -mt-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                class="absolute top-0 right-0 w-32 h-32 bg-burgundy-50/50 rounded-full blur-3xl -mr-16 -mt-16 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 aria-hidden="true"
               ></div>
 
               <!-- Icon Cell -->
               <div
-                class="relative z-10 w-16 h-16 bg-burgundy-50 border border-burgundy-100 rounded-2xl flex items-center justify-center mb-8 text-burgundy-700 group-hover:bg-burgundy-700 group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm shrink-0"
+                class="relative z-10 w-14 h-14 bg-burgundy-50 border border-burgundy-100 rounded-2xl flex items-center justify-center mb-8 text-burgundy-700 group-hover:bg-burgundy-700 group-hover:text-white group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-sm shrink-0"
                 aria-hidden="true"
               >
-                <Icon name="ph:shield-plus-fill" size="32" />
+                <Icon :name="vaccine.icon" size="28" />
               </div>
 
               <!-- Body -->
               <div class="relative z-10 flex-1">
-                <h3 class="text-xl md:text-2xl font-bold text-tertiary mb-4 group-hover:text-burgundy-800 transition-colors duration-300 leading-tight">
+                <h3 class="font-bold text-tertiary text-xl mb-4 group-hover:text-burgundy-800 transition-colors duration-300 leading-tight">
                   {{ vaccine.name }}
                 </h3>
                 <p class="text-on-tertiary-fixed-variant leading-relaxed text-base">
@@ -118,6 +114,7 @@ import Tabs from '../../../libs/ui/components/tabs/Tabs.vue'
 interface Vaccine {
   name: string
   desc: string
+  icon: string
 }
 
 interface Brand {
@@ -131,18 +128,22 @@ const dogVaccines: Vaccine[] = [
   {
     name: 'V10 / V8 Importada',
     desc: 'Protege contra Cinomose, Parvovirose, Leptospirose e outras 7 doenças virais e bacterianas graves.',
+    icon: 'ph:shield-check-fill',
   },
   {
     name: 'Antirrábica',
     desc: 'Prevenção da Raiva, zoonose grave transmitida por mordidas, obrigatória por lei para todos os cães.',
+    icon: 'ph:syringe-fill',
   },
   {
     name: 'Gripe Canina',
     desc: 'Proteção essencial contra a Tosse dos Canis e Bordetella, ideal para cães que passeiam ou frequentam creches.',
+    icon: 'ph:wind-fill',
   },
   {
     name: 'Giárdia',
     desc: 'Prevenção de distúrbios gastrointestinais causados pelo protozoário, protegendo também a saúde da família.',
+    icon: 'ph:bug-fill',
   },
 ]
 
@@ -150,10 +151,12 @@ const catVaccines: Vaccine[] = [
   {
     name: 'V4 / V5 Importada',
     desc: 'Panleucopenia, Rinotraqueíte, Calicivirose, Clamidiose e FeLV. A máxima proteção para a saúde do seu gato.',
+    icon: 'ph:shield-plus-fill',
   },
   {
     name: 'Antirrábica',
     desc: 'Proteção vital contra a Raiva para felinos, essencial mesmo para animais que não saem de casa.',
+    icon: 'ph:syringe-fill',
   },
 ]
 

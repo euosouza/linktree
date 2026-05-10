@@ -26,11 +26,10 @@
       
       <ServiceAftercare :aftercare="service.aftercare" />
       
-      <ServiceTestimonials :testimonials="service.testimonials" />
       
-      <ServiceFAQ :faqs="service.faqs" />
       
-      <ServiceRelated :current-slug="service.slug" />
+      <ServiceFAQ :faqs="service.faqs" />     
+      
       
       <ServiceCTA 
         :service-name="service.name" 

@@ -6,9 +6,9 @@ export interface FAQItem {
 
 export const useFAQ = () => {
   const categories = [
-    { id: 'atendimento', label: 'Atendimento & Região', icon: 'ph:map-pin-bold' },
-    { id: 'saude', label: 'Saúde & Espécies', icon: 'ph:heartbeat-bold' },
-    { id: 'financeiro', label: 'Pagamentos & Planos', icon: 'ph:credit-card-bold' }
+    { id: 'atendimento', label: 'Atendimento & Região', icon: 'ph:map-pin-bold', description: 'Locais, horários e agendamentos' },
+    { id: 'saude', label: 'Saúde & Espécies', icon: 'ph:heartbeat-bold', description: 'Cuidados, exames e especialidades' },
+    { id: 'financeiro', label: 'Pagamentos & Planos', icon: 'ph:credit-card-bold', description: 'Valores, formas de pagamento e convênios' }
   ]
 
   const faqs: FAQItem[] = [
